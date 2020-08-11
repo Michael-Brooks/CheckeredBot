@@ -1,23 +1,23 @@
 package main
 
 import (
-	"strings"
-	"os"
 	"log"
+	"os"
+	"strings"
 
 	"github.com/gempir/go-twitch-irc"
 	"github.com/joho/godotenv"
 )
 
 func main() {
-    envErr := godotenv.Load()
-    if envErr != nil {
-        log.Fatal("Error loading .env file")
-    }
+	envErr := godotenv.Load()
+	if envErr != nil {
+		log.Fatal("Error loading .env file")
+	}
 
-    twitchUser := os.Getenv("TWITCH_USER")
-    twitchOAuth := os.Getenv("TWITCH_OAUTH")
-    twitchChannel := os.Getenv("TWITCH_CHANNEL")
+	twitchUser := os.Getenv("TWITCH_USER")
+	twitchOAuth := os.Getenv("TWITCH_OAUTH")
+	twitchChannel := os.Getenv("TWITCH_CHANNEL")
 
 	// Bot name and oauth token
 	client := twitch.NewClient(twitchUser, twitchOAuth)
