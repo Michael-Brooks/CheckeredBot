@@ -40,11 +40,11 @@ func main() {
 	client.Join(twitchChannel)
 
 	// Connect to Twitch client
-	twitch := client.Connect()
+	err := client.Connect()
 
 	// If twitch errors, panic!
-	if twitch != nil {
-		panic(twitch)
+	if err != nil {
+		panic(err)
 	}
 
 }
